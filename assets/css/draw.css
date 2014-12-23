@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+}
+
+body {
+	background: #F8F8F8;
+	font-family: Helvetica;
+}
+
+.navTool {
+	margin: 0 auto;
+	margin-top: 25px;
+	width: 900px;
+}
+
+.navTool .options {
+	float: right;
+	margin-top: -40px;
+}
+
+p {
+    color: #1B91E3;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+p a {
+	text-decoration: none;
+	color: #29B191;
+}
+
+canvas {
+	clear: both;
+	border: 2px solid rgba(0,0,0,0.2);
+	margin: 0px auto;
+	margin-top: 25px;
+	display: block;
+}
