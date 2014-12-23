@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+body {
+    font-family: Helvetica;
+    background: #1B242E;
+}
+
+h1, p  {
+    margin: 0px auto;
+    text-align: center;
+    padding-top: 5px;
+}
+
+h1 {
+    color: #7a94b1;
+    font-weight: 400;
+    font-size: 30px;
+    text-shadow: 0 0 5px #000;
+}
+
+a {
+    text-decoration: none;
+    color: #29B191;
+}
+
+p {
+    color: #FFF;
+}
+
+p span {
+    color: #48A7E9;
+}
+#cloth {
+    display: block;
+    margin: 20px auto 0;
+}
