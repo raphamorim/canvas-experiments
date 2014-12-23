@@ -30,20 +30,6 @@ var getRand = function() {
 	return Math.floor(Math.random() * 100);
 };
 
-function update(args) {
-	ctx.beginPath();
-	ctx.arc(mouse.x + times, mouse.y + times, 30, 0, 2 * Math.PI);
-	ctx.strokeStyle = colors[getRandColor()];
-	ctx.stroke();
-
-	times++;
-
-	if (times >= 500) {
-		clearInterval(draw);
-		times = 0;
-	}
-}
-
 function getMousePos(canvas, evt) {
 	var rect = canvas.getBoundingClientRect();
 	return {
@@ -97,6 +83,4 @@ window.onload = function() {
 	events(ctx);
 
 	start();
-
-	// draw = setInterval(update, 10);
 }
