@@ -1,15 +1,3 @@
-// settings
-var physics_accuracy  = 3,
-    mouse_influence   = 10,
-    mouse_cut         = 5,
-    gravity           = 1200,
-    cloth_height      = 30,
-    cloth_width       = 80,
-    start_y           = 20,
-    spacing           = 10,
-    tear_distance     = 60;
-
-
 window.requestAnimFrame =
     window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
@@ -20,6 +8,20 @@ window.requestAnimFrame =
         window.setTimeout(callback, 1000 / 60);
 };
 
+// settings
+var physics_accuracy  = 3,
+    mouse_influence   = 10,
+    mouse_cut         = 5,
+    gravity           = 1200,
+    cloth_height      = 30,
+    cloth_width       = 75,
+    start_y           = 20,
+    spacing           = 12,
+    tear_distance     = 60,
+    canvas_width      = 900,
+    canvas_height     = 500;
+
+// global
 var canvas,
     ctx,
     cloth,
@@ -259,8 +261,8 @@ window.onload = function () {
     canvas  = document.getElementById('cloth');
     ctx     = canvas.getContext('2d');
 
-    canvas.width  = 820;
-    canvas.height = 500;
+    canvas.width  = canvas_width;
+    canvas.height = canvas_height;
 
     start();
 };
