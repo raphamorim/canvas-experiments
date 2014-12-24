@@ -8,6 +8,8 @@ The idea of this repository is to feed the raphamorim.com experiments. The goal 
 
 - [Inception](http://raphamorim.com/canvas-experiments/inception)
 - [Draw Table](http://raphamorim.com/canvas-experiments/draw)
+- [Cloth](http://raphamorim.com/canvas-experiments/cloth)
+
 
 ## Credits:
 
