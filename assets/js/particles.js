@@ -3,15 +3,14 @@ var speed = 35,
 	canvas_width = window.innerWidth,
 	canvas_height = window.innerHeight;
 
-window.requestAnimFrame =
-	window.requestAnimationFrame ||
-	window.webkitRequestAnimationFrame ||
-	window.mozRequestAnimationFrame ||
-	window.oRequestAnimationFrame ||
-	window.msRequestAnimationFrame ||
-	function(callback) {
-		window.setTimeout(callback, 1000 / 60);
-	};
+window.requestAnimFrame = (function() {
+	return window.requestAnimationFrame ||
+		window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		function(callback) {
+			window.setTimeout(callback, 1000 / 60);
+		};
+})();
 
 var canvas,
 	ctx,
@@ -19,7 +18,7 @@ var canvas,
 	limit = 100,
 	draw,
 	particles = [],
-    colors = ['#f0fd36', '#f49ff1', '#f53eac', '#76fbfa'];
+	colors = ['#f0fd36', '#f49ff1', '#f53eac', '#76fbfa'];
 
 var getRandColor = function() {
 	return Math.floor(Math.random() * colors.length);
@@ -33,10 +32,10 @@ var getRandPos = function() {
 	return [(Math.floor(Math.random() * 200) * 10), (Math.floor(Math.random() * 80) * 10)];
 };
 
-function clean(){
+function clean() {
 	ctx.clearRect(0, 0, canvas_width, canvas_height);
 
-	particles.forEach(function(p){
+	particles.forEach(function(p) {
 		// p[0] = x, p[1] = y, p[2] = color
 		// p[3] = globalAlpha, p[4] = size
 
@@ -73,8 +72,6 @@ function update(args) {
 	ctx.strokeStyle = randColor;
 	ctx.stroke();
 
-	console.log(times)
-
 	times++;
 
 	particles.push([randPos[0], randPos[1], randColor, 1, randSize]);
@@ -87,10 +84,10 @@ function update(args) {
 
 window.onload = function() {
 	var body = document.querySelector('body');
-		body.style.background = '#2C2C44';
+	body.style.background = '#2C2C44';
 
 	canvas = document.getElementById('particles'),
-	ctx = canvas.getContext('2d');
+		ctx = canvas.getContext('2d');
 
 	body.style.margin = '0px';
 	canvas.style.margin = '0px';
