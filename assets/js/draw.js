@@ -6,18 +6,7 @@ var times = 0,
 	},
 	canvas_width = 960,
 	canvas_height = 600;
-
-window.requestAnimFrame =
-	window.requestAnimationFrame ||
-	window.webkitRequestAnimationFrame ||
-	window.mozRequestAnimationFrame ||
-	window.oRequestAnimationFrame ||
-	window.msRequestAnimationFrame ||
-	function(callback) {
-		window.setTimeout(callback, 1000 / 60);
-	};
-
-var canvas,
+	canvas,
 	ctx,
 	draw,
 	colors = ['#526E8C', '#1B91E3', '#29B191', '#E5473C'];
