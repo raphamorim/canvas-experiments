@@ -5,7 +5,7 @@ var times = 0,
 		y: 40
 	},
 	canvas_width = 960,
-	canvas_height = 600;
+	canvas_height = 600,
 	canvas,
 	ctx,
 	draw,
