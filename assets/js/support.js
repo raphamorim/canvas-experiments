@@ -1,4 +1,34 @@
-window.onload = startDemo;
+window.onload = start;
+
+var angle = 0;
+var vertices = [
+    new Point3D(-1, 1, -1),
+    new Point3D(1, 1, -1),
+    new Point3D(1, -1, -1),
+    new Point3D(-1, -1, -1),
+    new Point3D(-1, 1, 1),
+    new Point3D(1, 1, 1),
+    new Point3D(1, -1, 1),
+    new Point3D(-1, -1, 1)
+];
+// Define the vertices that compose each of the 6 faces. These numbers are
+// indices to the vertex list defined above.
+var faces = [
+    [0, 1, 2, 3],
+    [1, 5, 6, 2],
+    [5, 4, 7, 6],
+    [4, 0, 3, 7],
+    [0, 4, 5, 1],
+    [3, 2, 6, 7]
+];
+var colors = [
+    [255, 0, 0],
+    [0, 255, 0],
+    [0, 0, 255],
+    [255, 255, 0],
+    [0, 255, 255],
+    [255, 0, 255]
+];
 
 function Point3D(x, y, z) {
     this.x = x;
@@ -44,52 +74,17 @@ function Point3D(x, y, z) {
     }
 }
 
-var vertices = [
-    new Point3D(-1, 1, -1),
-    new Point3D(1, 1, -1),
-    new Point3D(1, -1, -1),
-    new Point3D(-1, -1, -1),
-    new Point3D(-1, 1, 1),
-    new Point3D(1, 1, 1),
-    new Point3D(1, -1, 1),
-    new Point3D(-1, -1, 1)
-];
-
-// Define the vertices that compose each of the 6 faces. These numbers are
-// indices to the vertex list defined above.
-var faces = [
-    [0, 1, 2, 3],
-    [1, 5, 6, 2],
-    [5, 4, 7, 6],
-    [4, 0, 3, 7],
-    [0, 4, 5, 1],
-    [3, 2, 6, 7]
-];
-
-// Define the colors for each face.
-var colors = [
-    [255, 0, 0],
-    [0, 255, 0],
-    [0, 0, 255],
-    [255, 255, 0],
-    [0, 255, 255],
-    [255, 0, 255]
-];
-
-var angle = 0;
-
-/* Constructs a CSS RGB value from an array of 3 elements. */
 function arrayToRGB(arr) {
-    if (arr.length == 3) {
-        return "rgb(" + arr[0] + "," + arr[1] + "," + arr[2] + ")";
-    }
-    return "rgb(0,0,0)";
+    if (arr.length == 3)
+        return 'rgb(' + arr[0] + ',' + arr[1] + ',' + arr[2] + ')';
+
+    return 'rgb(0,0,0)';
 }
 
-function startDemo() {
-    canvas = document.getElementById("cube");
+function start() {
+    canvas = document.getElementById('cube');
     if (canvas && canvas.getContext) {
-        ctx = canvas.getContext("2d");
+        ctx = canvas.getContext('2d');
         setInterval(loop, 33);
     }
 }
