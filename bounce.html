@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bounce [Canvas]</title>
+  </head>
+<body>
+  <section>
+    <div>
+        <canvas id="canvas" width="1000" height="300"></canvas>
+    </div>
+
+<script type="text/javascript">
+var canvas,
+    ctx,
+    x = 400,
+    y = 300,
+    dx = 2,
+    dy = 4,
+    WIDTH = 1000,
+    HEIGHT = 300; 
+
+function circle(x,y,r) {
+  ctx.beginPath();
+  ctx.arc(x, y, r, 0, Math.PI*2, true);
+  ctx.fill();
+}
+
+function rect(x,y,w,h) {
+  ctx.beginPath();
+  ctx.rect(x,y,w,h);
+  ctx.closePath();
+  ctx.fill();
+}
+
+function clear() {
+  ctx.clearRect(0, 0, WIDTH, HEIGHT);
+}
+
+function start() {
+  canvas = document.getElementById("canvas");
+  ctx = canvas.getContext("2d");
+
+  return setInterval(draw, 10);
+}
+
+function draw() {
+  clear();
+  ctx.fillStyle = "#FAE06E";
+  rect(0,0, WIDTH, HEIGHT);
+  ctx.fillStyle = "#444444";
+  circle(x, y, 10);
+
+  if (x + dx > WIDTH || x + dx < 0)
+    dx = -dx;
+  if (y + dy > HEIGHT || y + dy < 0)
+    dy = -dy;
+
+  x += dx;
+  y += dy;
+}
+
+window.onload = start;
+</script>
+
+  </section>
+</body>
+</html>

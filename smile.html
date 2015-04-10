@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Smile [Canvas]</title>
+  </head>
+  <body>
+    <div>
+      <canvas id="smile" width="800" height="600"></canvas>
+      <script>
+        window.onload = start;
+
+        function drawSmile(ctx) {
+            ctx.beginPath();
+            ctx.arc(180,180,70,0,Math.PI*2,true);
+            ctx.moveTo(230,180);
+            ctx.arc(180,180,50,0,Math.PI,false);
+            ctx.moveTo(155,150);
+            ctx.arc(150,150,5,0,Math.PI*2,true);
+            ctx.moveTo(215,150);
+            ctx.arc(210,150,5,0,Math.PI*2,true);
+            ctx.fillText("Canvas é demais né fera!", 165, 270);
+            ctx.stroke();
+        }
+
+        function start() {
+            var canvas = document.getElementById("smile"),
+                ctx = canvas.getContext("2d");
+
+            drawSmile(ctx);
+        }
+      </script>
+  </body>
+</html>
