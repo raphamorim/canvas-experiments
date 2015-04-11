@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lines [Canvas]</title>
+</head>
+<body>
+	<canvas height="500" width="500"></canvas>
+
+<script type="text/javascript">
+	var canvas = document.querySelector('canvas'),
+		context = canvas.getContext('2d');
+
+	for (var x = 0.5; x < 500; x += 15) {
+  		context.moveTo(x, 0);
+  		context.lineTo(x, 500);
+	} 
+	
+	for (var y = 0.5; y < 500; y += 15) {
+  		context.moveTo(0, y);
+  		context.lineTo(500, y);
+	}
+
+	context.strokeStyle = "#eee";
+	context.stroke();
+
+	context.beginPath();
+	context.moveTo(0, 40);
+	context.lineTo(500, 40);
+
+	context.moveTo(60, 0);
+	context.lineTo(60, 500);
+
+	context.strokeStyle = "#000";
+	context.stroke();
+
+	context.font = "normal 20px sans-serif";
+	context.fillText("x", 470, 70);
+	context.fillText("y", 80, 480);
+</script>
+</body>
+</html>
