@@ -33,10 +33,6 @@ function rect(x,y,w,h) {
   ctx.fill();
 }
 
-function clear() {
-  ctx.clearRect(0, 0, WIDTH, HEIGHT);
-}
-
 function start() {
   canvas = document.getElementById("canvas");
   ctx = canvas.getContext("2d");
@@ -45,7 +41,7 @@ function start() {
 }
 
 function draw() {
-  clear();
+  ctx.clearRect(0, 0, WIDTH, HEIGHT);
   ctx.fillStyle = "#FAE06E";
   rect(0,0, WIDTH, HEIGHT);
   ctx.fillStyle = "#444444";

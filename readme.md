@@ -10,7 +10,10 @@ The idea of this repository is to feed the raphamorim.com experiments. The goal 
 - [Particles](http://raphamorim.com/canvas-experiments/particles)
 - [Draw Table](http://raphamorim.com/canvas-experiments/draw)
 - [Cloth](http://raphamorim.com/canvas-experiments/cloth)
-
+- [Scroll](http://raphamorim.com/canvas-experiments/scroll)
+- [Smile](http://raphamorim.com/canvas-experiments/smile)
+- [Bounce](http://raphamorim.com/canvas-experiments/bounce)
+- [Support](http://raphamorim.com/canvas-experiments/support)
 
 ## Credits:
 
