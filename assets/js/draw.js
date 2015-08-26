@@ -54,17 +54,17 @@ function start() {
 	};
 }
 
-function events(ctx){
+function events(ctx) {
 	var clean = document.querySelector('.clean');
 
-	clean.addEventListener('click', function(e){
-    	ctx.clearRect(0, 0, canvas_width, canvas_height);
+	clean.addEventListener('click', function(e) {
+		ctx.clearRect(0, 0, canvas_width, canvas_height);
 	});
 }
 
 window.onload = function() {
 	canvas = document.getElementById("draw"),
-	ctx = canvas.getContext("2d");
+		ctx = canvas.getContext("2d");
 
 	canvas.width = canvas_width;
 	canvas.height = canvas_height;
